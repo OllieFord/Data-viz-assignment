@@ -1,0 +1,60 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Dataviz project</title>
+  <meta name="description" content="NIPS papers visualization">
+  <meta name="Oliver Ford" content="DatViz">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="Main.css">
+
+  <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> 
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  
+  
+</head>
+
+<body>
+    <div class="container"> 
+      <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+          <h1> The Growth of Artificial Inteligence </h1>
+          <p id="subheadding"> An interactive datavizualisation </p> 
+          <div class="col-lg-8 center-block">
+          <div id="graphic1"></div>
+          </div>
+          <div class="col-lg-4 center-block">
+            <div id="graphic2"></div>
+          </div>
+          <div class="col-lg-12" id="slider">
+            <input id="embedSlider" type="range" value="1986" min="1986" max="2016" oninput="showValue(this.value)">
+            <span id="range">1986</span>
+          </div>
+          <div class="col-lg-12">
+          <div id="legend"> </div>
+        </div>
+          <div class="col-lg-12 center-block">
+            <div id="Text">
+              <div class="col-lg-8 center-block">
+                <h2>AI Landscape</h2>
+                  <p>Each dot in the AI landscape represents a paper published in the NIPS journal. These papers are then assigned a colour to represent which topic within the field of AI they belong to. As you drag the slider you can see papers that were published that year being added to the landscape, this is done cumulatively so you are able to “see” how the field grows and develops over time. To create this landscape every paper is converted into a multi dimensional vector, this allows each paper to be compared to every other in terms of similarity/differences. To visualise this multi dimensional vector I then flatten it so that the high dimensional vector data is embedded into a space of 2 dimensions.  This produces a scatter plot of papers that are grouped (colour) based on their topic and positioned based on their similarity to all other papers in the field.  </p>
+                  <p> The AI landscape presents a macro view of the fields development, and the bar chart presents the micro view. In this way, by making it interactive, I present a micro-macro view of the data. I believe that we can gain better understanding of the world (data) by accessing it on two levels: the micro-level where we can look at concrete aspects of the world - like numbers, the macro-level then allows us to understand how these concrete aspects fit into the whole.</p>
+              </div>
+              <div class="col-lg-4 center-block">
+                <h2>Papers Published</h2>
+                <p>The bar chart seen to the right of the AI landscape shows the number of papers published by category for a particular year. As you move the slider the chart updates to match the papers published for that year. The AI landscape shows the overall growth of the field over time, however, since the papers are added cumulatively it is difficult to see the popularity of each topic year to year.So the bar chart is there to show you a micro (yearly) view of the development.  </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+          <script src="app.js"></script>
+
+</body>
+</html>
